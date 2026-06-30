@@ -182,28 +182,28 @@ export default function Home() {
 
   return (
     <div className="bg-[#f9fbf9] text-gray-800 antialiased min-h-screen flex flex-col justify-between font-sans">
-      {/* ========== FIXED NAVBAR ========== */}
-      <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Logo — larger */}
+      {/* ========== FLOATING MAC DOCK NAVBAR (DARK) ========== */}
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl rounded-full bg-emerald-950/40 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/20">
+        <div className="px-5 sm:px-6 h-16 flex items-center justify-between">
+          {/* Logo — highly visible */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={logoUrl}
             alt="Science Council Taylor's International School KL Logo"
-            className="h-10 sm:h-12 w-auto object-contain"
+            className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]"
             referrerPolicy="no-referrer"
           />
           {/* Nav links */}
           <div className="flex items-center gap-2">
             <a
               href="#timeline-section"
-              className="px-4 py-2 rounded-full text-sm font-semibold text-[#2C5E43] bg-[#EAF2EE] hover:bg-[#76B095] hover:text-white transition-all duration-200 flex items-center gap-1.5"
+              className="px-4 py-2 rounded-full text-sm font-semibold text-white bg-white/10 hover:bg-white/20 transition-all duration-200 flex items-center gap-1.5"
             >
               <CalendarDays className="w-4 h-4" /> Challenge Timeline
             </a>
             <a
               href="#interactive-hub"
-              className="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-[#2C5E43] hover:text-white transition-all duration-200 flex items-center gap-1.5"
+              className="px-4 py-2 rounded-full text-sm font-semibold text-white hover:bg-white/10 transition-all duration-200 flex items-center gap-1.5"
             >
               <Sliders className="w-4 h-4" /> Project Toolkit
             </a>
