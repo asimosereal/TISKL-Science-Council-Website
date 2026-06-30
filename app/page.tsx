@@ -180,39 +180,20 @@ export default function Home() {
     number | null
   >(null);
 
-  // Smooth-scroll the page down to the timeline section.
-  const scrollToTimeline = () => {
-    const el = document.getElementById("timeline-section");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <div className="bg-[#f9fbf9] text-gray-800 antialiased min-h-screen flex flex-col justify-between font-sans">
-      {/* ========== HERO / LANDING ========== */}
-      <header className="relative bg-gradient-to-br from-[#1C3D2B] via-[#2C5E43] to-emerald-950 text-white overflow-hidden px-4 sm:px-6 lg:px-8 pt-10 pb-16 sm:pt-16 sm:pb-24">
-        {/* Abstract background geometric accents */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-48 h-48 rounded-full bg-[#76B095] blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-emerald-400 blur-3xl"></div>
-        </div>
-
-        {/* Top nav row: logo + quick jumps */}
-        <div className="relative z-20 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mb-12 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={logoUrl}
-              alt="Science Council Taylor's International School KL Logo"
-              className="h-16 sm:h-20 w-auto object-contain"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-
+      {/* ========== FIXED NAVBAR ========== */}
+      <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          {/* Logo — larger */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoUrl}
+            alt="Science Council Taylor's International School KL Logo"
+            className="h-10 sm:h-12 w-auto object-contain"
+            referrerPolicy="no-referrer"
+          />
+          {/* Nav links */}
           <div className="flex items-center gap-2">
             <a
               href="#timeline-section"
@@ -222,11 +203,20 @@ export default function Home() {
             </a>
             <a
               href="#interactive-hub"
-              className="px-4 py-2 rounded-full text-sm font-semibold text-emerald-50 bg-white/10 border border-white/10 hover:bg-[#2C5E43] hover:text-white transition-all duration-200 flex items-center gap-1.5"
+              className="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-[#2C5E43] hover:text-white transition-all duration-200 flex items-center gap-1.5"
             >
               <Sliders className="w-4 h-4" /> Project Toolkit
             </a>
           </div>
+        </div>
+      </nav>
+
+      {/* ========== HERO / LANDING ========== */}
+      <header className="relative bg-gradient-to-br from-[#1C3D2B] via-[#2C5E43] to-emerald-950 text-white overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-24 min-h-[calc(100vh-4rem)] flex items-center">
+        {/* Abstract background geometric accents */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-48 h-48 rounded-full bg-[#76B095] blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-emerald-400 blur-3xl"></div>
         </div>
 
         {/* Hero content */}
@@ -252,14 +242,6 @@ export default function Home() {
             three-phase path to turn your scientific theories into real-world
             impact.
           </p>
-
-          {/* Open Timeline button -> smooth scroll to timeline section */}
-          <button
-            onClick={scrollToTimeline}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#1C3D2B] bg-[#76B095] hover:bg-emerald-300 transition-colors shadow-lg mb-12"
-          >
-            <CalendarDays className="w-4 h-4" /> Open Timeline
-          </button>
 
           {/* Live Countdown Timer */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 max-w-xl mx-auto shadow-2xl">
@@ -328,7 +310,7 @@ export default function Home() {
       </header>
 
       {/* ========== MAIN CONTENT ========== */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow w-full">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24 flex-grow w-full">
         {/* SECTION: Forms & Submissions Hub */}
         <section className="mb-20">
           <div className="text-center mb-10">
