@@ -182,15 +182,15 @@ export default function Home() {
 
   return (
     <div className="bg-[#f9fbf9] text-gray-800 antialiased min-h-screen flex flex-col justify-between font-sans">
-      {/* ========== FLOATING MAC DOCK NAVBAR (DARK) ========== */}
+     {/* ========== FLOATING MAC DOCK NAVBAR (DARK) ========== */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl rounded-full bg-emerald-950/40 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/20">
-        <div className="px-5 sm:px-6 py-4 flex items-center justify-between">
-          {/* Logo — highly visible */}
+        <div className="px-5 sm:px-6 py-2.5 flex items-center justify-between">
+          {/* Logo — scaled down for a sleeker dock */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={logoUrl}
             alt="Science Council Taylor's International School KL Logo"
-            className="h-16 sm:h-20 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]"
+            className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]"
             referrerPolicy="no-referrer"
           />
           {/* Nav links */}
